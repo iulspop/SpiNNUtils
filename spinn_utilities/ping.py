@@ -44,7 +44,7 @@ class Ping(object):
         else:
             cmd = "ping -c 1 -W 1 "
         process = subprocess.Popen(
-            cmd + ip_address, shell=True, stdout=subprocess.PIPE)
+            cmd + ip_address, shell=False, stdout=subprocess.PIPE)
         time.sleep(1.2)
         process.stdout.close()
         process.wait()
