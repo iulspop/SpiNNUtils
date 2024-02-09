@@ -39,7 +39,7 @@ def test_generate_aggregate():
     httpretty.register_uri(
         httpretty.POST, Zenodo._PUBLISH_URL.format(deposit_id),
         status=Zenodo._VALID_STATUS_REQUEST_PUBLISH)
-    output_path = tempfile.mktemp(".cff")
+    output_path = tempfile.mkstemp(".cff")
     os.environ["PATH"] = os.environ["PATH"] + os.pathsep + (
         os.path.dirname(__file__) + os.sep + "c_module")
     arguments = [output_path, "unittests.citation.package_1_folder.package_1",

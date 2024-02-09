@@ -55,7 +55,7 @@ class TestConverter(unittest.TestCase):
         class_file = sys.modules[self.__module__].__file__
         path = os.path.dirname(os.path.abspath(class_file))
         os.chdir(path)
-        os.environ["C_LOGS_DICT"] = tempfile.mktemp()
+        os.environ["C_LOGS_DICT"] = tempfile.mkstemp()
         dir_path = os.path.dirname(os.path.realpath(__file__))
         src = os.path.join(dir_path, "foo", "bar")
         dest = os.path.join(dir_path, "alpha", "beta")

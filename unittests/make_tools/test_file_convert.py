@@ -69,7 +69,7 @@ class TestConverter(unittest.TestCase):
     def test_not_there_exception(self):
         class_file = sys.modules[self.__module__].__file__
         path = os.path.dirname(os.path.abspath(class_file))
-        os.environ["C_LOGS_DICT"] = tempfile.mktemp()
+        os.environ["C_LOGS_DICT"] = tempfile.mkstemp()
         # clear the database and create a new one
         LogSqlLiteDatabase(True)
         src = os.path.join(path, "mistakes")
@@ -85,7 +85,7 @@ class TestConverter(unittest.TestCase):
     def test_split_fail(self):
         class_file = sys.modules[self.__module__].__file__
         path = os.path.dirname(os.path.abspath(class_file))
-        os.environ["C_LOGS_DICT"] = tempfile.mktemp()
+        os.environ["C_LOGS_DICT"] = tempfile.mkstemp()
         # clear the database and create a new one
         LogSqlLiteDatabase(True)
         src = os.path.join(path, "mistakes")
@@ -101,7 +101,7 @@ class TestConverter(unittest.TestCase):
     def test_format_fail(self):
         class_file = sys.modules[self.__module__].__file__
         path = os.path.dirname(os.path.abspath(class_file))
-        os.environ["C_LOGS_DICT"] = tempfile.mktemp()
+        os.environ["C_LOGS_DICT"] = tempfile.mkstemp()
         # clear the database and create a new one
         LogSqlLiteDatabase(True)
         src = os.path.join(path, "mistakes")
@@ -115,7 +115,7 @@ class TestConverter(unittest.TestCase):
     def test_unclosed_log(self):
         class_file = sys.modules[self.__module__].__file__
         path = os.path.dirname(os.path.abspath(class_file))
-        os.environ["C_LOGS_DICT"] = tempfile.mktemp()
+        os.environ["C_LOGS_DICT"] = tempfile.mkstemp()
         # clear the database and create a new one
         LogSqlLiteDatabase(True)
         src = os.path.join(path, "mistakes")
@@ -130,7 +130,7 @@ class TestConverter(unittest.TestCase):
     def test_semi(self):
         class_file = sys.modules[self.__module__].__file__
         path = os.path.dirname(os.path.abspath(class_file))
-        os.environ["C_LOGS_DICT"] = tempfile.mktemp()
+        os.environ["C_LOGS_DICT"] = tempfile.mkstemp()
         # clear the database and create a new one
         LogSqlLiteDatabase(True)
         src = os.path.join(path, "mistakes")
@@ -147,7 +147,7 @@ class TestConverter(unittest.TestCase):
     def test_open(self):
         class_file = sys.modules[self.__module__].__file__
         path = os.path.dirname(os.path.abspath(class_file))
-        os.environ["C_LOGS_DICT"] = tempfile.mktemp()
+        os.environ["C_LOGS_DICT"] = tempfile.mkstemp()
         # clear the database and create a new one
         LogSqlLiteDatabase(True)
         src = os.path.join(path, "mistakes")
@@ -163,7 +163,7 @@ class TestConverter(unittest.TestCase):
     def test_too_few(self):
         class_file = sys.modules[self.__module__].__file__
         path = os.path.dirname(os.path.abspath(class_file))
-        os.environ["C_LOGS_DICT"] = tempfile.mktemp()
+        os.environ["C_LOGS_DICT"] = tempfile.mkstemp()
         # clear the database and create a new one
         LogSqlLiteDatabase(True)
         src = os.path.join(path, "mistakes")
@@ -180,7 +180,7 @@ class TestConverter(unittest.TestCase):
     def test_too_many(self):
         class_file = sys.modules[self.__module__].__file__
         path = os.path.dirname(os.path.abspath(class_file))
-        os.environ["C_LOGS_DICT"] = tempfile.mktemp()
+        os.environ["C_LOGS_DICT"] = tempfile.mkstemp()
         # clear the database and create a new one
         LogSqlLiteDatabase(True)
         src = os.path.join(path, "mistakes")
