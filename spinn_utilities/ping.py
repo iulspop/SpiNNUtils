@@ -16,6 +16,7 @@ import platform
 import subprocess
 import time
 from typing import Set
+from security import safe_command
 
 
 class Ping(object):
@@ -43,8 +44,7 @@ class Ping(object):
             cmd = "ping -n 1 -w 1 "
         else:
             cmd = "ping -c 1 -W 1 "
-        process = subprocess.Popen(
-            cmd + ip_address, shell=True, stdout=subprocess.PIPE)
+        process = safe_command.run(subprocess.Popen, cmd + ip_address, shell=True, stdout=subprocess.PIPE)
         time.sleep(1.2)
         process.stdout.close()
         process.wait()
