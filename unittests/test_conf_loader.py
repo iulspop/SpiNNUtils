@@ -15,7 +15,6 @@
 import logging
 import os
 import pytest
-import random
 import configparser
 import unittests  # CRITICAL: *THIS* package!
 from testfixtures import LogCapture
@@ -25,6 +24,7 @@ from spinn_utilities.configs import (
     ConfigTemplateException, NoConfigFoundException, UnexpectedConfigException)
 from spinn_utilities.log import FormatAdapter
 from spinn_utilities.testing import log_checker
+import secrets
 
 
 CFGFILE = "configloader.cfg"
@@ -48,7 +48,7 @@ logger = FormatAdapter(logging.getLogger(__name__))
 @pytest.fixture
 def not_there():
     name = "test_config_for_spinnutils_unittests.{}.txt".format(
-        random.randint(1, 1000000))
+        secrets.SystemRandom().randint(1, 1000000))
     place = os.path.join(os.path.expanduser("~"), f".{name}")
     if os.path.exists(place):
         # Check existing is a config from previsous test run
