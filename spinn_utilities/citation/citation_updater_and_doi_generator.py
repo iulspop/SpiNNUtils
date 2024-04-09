@@ -19,6 +19,7 @@ import zipfile
 import unicodedata
 import os
 from time import strptime
+from security import safe_requests
 
 CITATION_FILE_VERSION_FIELD = "version"
 CITATION_FILE_DATE_FIELD = "date-released"
@@ -92,8 +93,7 @@ class _Zenodo(object):
             return None
 
     def get_verify(self, related):
-        r = requests.get(
-            self._DEPOSIT_GET_URL, timeout=10,
+        r = safe_requests.get(self._DEPOSIT_GET_URL, timeout=10,
             params={self._ACCESS_TOKEN: self.__zenodo_token,
                     self._RELATED_IDENTIFIERS: related},
             json={}, headers={self._CONTENT_TYPE: self._JSON})
