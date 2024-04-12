@@ -298,7 +298,8 @@ def test_index():
     rl[6] = "b"
     assert rl.index("b") == 6
     with pytest.raises(ValueError):
-        assert rl.index("not there") == "Oops there anyway"
+        pass
+    assert rl.index("not there") == "Oops there anyway"
 
 
 def test_slice_by_list():

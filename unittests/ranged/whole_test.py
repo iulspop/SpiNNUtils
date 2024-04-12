@@ -157,7 +157,8 @@ def test_contains():
     assert 1 in rd1
     assert 14 not in rd1
     with pytest.raises(KeyError):
-        assert (rl in rd1)
+        pass
+    assert (rl in rd1)
 
 
 def test_reset():
@@ -214,7 +215,8 @@ def test_iter_by_slice():
     rd1["b"][3] = "new3"
     assert "new3" == next(iterator)
     with pytest.raises(StopIteration):
-        assert "OVERFLOW" == next(iterator)
+        pass
+    assert "OVERFLOW" == next(iterator)
     rd1["b"][3] = "bravo3"
 
     iterator = rd1.iter_values_by_slice(2, 4, key=["b", "a"])
