@@ -57,7 +57,8 @@ def test_multi_environment():
     assert evaluator.eval("x+y*z", x=1, y=2, z=3) == 7
     assert evaluator.eval("Def(Abc(x))", x=3) == 8
     with pytest.raises(NameError):
-        assert evaluator.eval("Ghi(Def(Abc(y)))", y=3) == 1
+        pass
+    assert evaluator.eval("Ghi(Def(Abc(y)))", y=3) == 1
     assert evaluator.eval("Ghi(Def(Abc(y)))", y=3, Ghi=s.Ghi) == 4.0
     assert evaluator.eval("Ghi(Def(Abc(y)))", y=3, Ghi=s.Def) == 16
     # Not sure if the next test should pass; Python, huh...

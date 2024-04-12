@@ -70,7 +70,7 @@ def test_non_base_direct():
         class Foo3(NotFromBase, Ifc):
             def foo(self):
                 pass
-        assert Foo3().bar == 234
+    assert Foo3().bar == 234
 
 
 def test_non_base_indirect():
@@ -78,7 +78,7 @@ def test_non_base_indirect():
         class Foo4(NotFromBase, DerivedIfc):
             def foo(self):
                 pass
-        assert Foo4().bar == 234
+    assert Foo4().bar == 234
 
 
 def test_non_base_double_indirect():
@@ -90,7 +90,7 @@ def test_non_base_double_indirect():
         class Foo6(NotFromBase, Foo5):
             def foo(self):
                 pass
-        assert Foo6().bar == 234
+    assert Foo6().bar == 234
 
 
 def test_double():

@@ -96,7 +96,8 @@ def test_ranges_by_all():
 
 def test_get_str():
     with pytest.raises(KeyError):
-        assert ranged_view["OOPS"]
+        pass
+    assert ranged_view["OOPS"]
 
 
 def test_no_set():
