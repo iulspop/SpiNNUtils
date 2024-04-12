@@ -34,8 +34,8 @@ def test_set_ness():
     assert len(o) == 2
     o.add(123)
     assert len(o) == 2
-    assert o == set([123, 456])
-    assert o == set([456, 123])
+    assert o == {123, 456}
+    assert o == {456, 123}
     assert o == [123, 456]
     assert o == [456, 123]
     o.remove(123)
